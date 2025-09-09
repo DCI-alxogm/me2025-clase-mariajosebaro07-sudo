@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <math.h>
+
+// Define the function f(c)
+float f(float c) {
+    return (9.81 * 68.1) / c * (1 - exp(-(c / 68.1) * 10)) - 40;
+}
+
+int main() {
+    float a, b, mid, fa, fb, fmid;
+   
+    // Get the initial interval [a, b] from the user
+    printf("Enter the interval [a, b]: ");
+    scanf("%f %f", &a, &b);
+
+    // Check if the interval is valid
+    fa = f(a);
+    fb = f(b);
+
+    if (fa * fb >= 0) {
+        printf("The function has the same sign at the endpoints a and b. Bisection method may not work.\n");
+        return 1; // Exit with an error code
+    }
+
+    ....
+
+    mid = (a + b) / 2.0; // Final approximation of the root
+    printf("Approximate root: %f\n", mid);
+
+    return 0; // Exit successfully
+}
